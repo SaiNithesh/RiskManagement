@@ -1,0 +1,21 @@
+{
+    "authenticatedMethod": "route",
+    "sessionTimeout": 30,
+    "logout": {
+        "logoutEndPoint": "/do/logout",
+        "logoutPage": "/"
+    },
+    "route": [
+        {
+            "source": "^/app/(.*)$",
+            "target": "$1",
+            "localDir": "resources",
+            "authenticatedType": "xsuaa"
+        },
+        {
+            "source": "^/service/(.*)$",
+            "destination": "srv-binding",
+            "authenticatedType": "xsuaa"
+        }
+    ]
+}
